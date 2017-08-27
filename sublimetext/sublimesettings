@@ -1,0 +1,59 @@
+  sublime {
+  "binary_file_patterns":
+  [
+    "*.dds",
+    "*.eot",
+    "*.gif",
+    "*.ico",
+    "*.jar",
+    "*.jpeg",
+    "*.jpg",
+    "*.pdf",
+    "*.png",
+    "*.swf",
+    "*.tga",
+    "*.ttf",
+    "*.zip",
+    "bower_components/**",
+    "dist/**",
+    "node_modules/**",
+    "tmp/**",
+    "vendor/**"
+  ],
+  "color_scheme": "Packages/Colorsublime - Themes/Afterglow.tmTheme",
+  "drag_text": false,
+  "folder_no_icon": true,
+  "font_face": "Input Mono",
+  "font_size": 11,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "hot_exit": false,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "indent_guide_options":
+  [
+    "draw_normal",
+    "draw_active"
+  ],
+  "line_padding_bottom": 1,
+  "line_padding_top": 1,
+  "preview_on_click": true,
+  "remember_open_files": false,
+  "rulers":
+  [
+    80
+  ],
+  "show_full_path": true,
+  "sidebar_no_icon": true,
+  "tab_size": 2,
+  "tabs_padding_small": true,
+  "tabs_small": true,
+  "theme": "Afterglow.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "vintage_start_in_command_mode": true,
+  "word_wrap": false,
+  "wrap_width": 80
+}
+
