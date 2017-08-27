@@ -1,0 +1,70 @@
+[user]
+	name =
+	email = 
+
+[alias]
+	st = status
+	br = branch -vv
+	brm = branch -vv --merged
+	brn = branch -vv --no-merged
+	brmm = branch -vv --merged master
+	brnmm = branch -vv --no-merged master
+	brms = branch -vv --merged staging
+	brnms = branch -vv --no-merged staging
+	df = diff
+	dfn = diff --name-only
+	dc = diff --cached
+	dcn = diff --cached --name-only
+	dfw = diff --word-diff
+	dcw = diff --cached --word-diff
+	lg = log --oneline --decorate
+	ls = ls-files
+
+	co = checkout
+	ec = config --global -e
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	cob = checkout -b
+	ci = commit
+	cm = !git add -A && git commit -m
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	wip = !git add -u && git commit -m "WIP"
+	undo = reset HEAD~1 --mixed
+	amend = commit -a --amend
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+	lol = log --graph --pretty=format:'%C(yellow)%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cblue(%cr)%Creset' --abbrev-commit --date=relative
+	lola = log --graph --pretty=format:'%C(yellow)%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cblue(%cr)%Creset' --abbrev-commit --date=relative --all
+	ign = ls-files -o -i --exclude-standard
+
+[color]
+	ui = auto
+[color "branch"]
+	current = green
+	local = normal
+	remote = blue
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+
+[core]
+	excludesfile = ~/.gitignore_global
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[push]
+	default = current
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+[commit]
+	# template = ~/.stCommitMsg
+
