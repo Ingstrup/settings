@@ -1,4 +1,4 @@
-" Hit fj or jf fast to exit insert mode without moving back 
+" Hit fj or jf fast to exit insert mode without moving back
 set timeoutlen=300
 inoremap fj <Esc>l
 inoremap jf <Esc>l
@@ -44,6 +44,11 @@ autocmd BufEnter * call SetTerminalTitle()
 " set confirm
 set autowriteall
 
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
+set autoindent
+
+
 " Better command-line completion
 set wildmenu
 
@@ -57,6 +62,9 @@ set hlsearch
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
 
 " Display the cursor position on the last line of the screen or in the status
 " line of a window
@@ -84,5 +92,11 @@ map Y y$
 
 execute pathogen#infect()
 
-nmap <F6> :NERDTreeToggle<CR>
+"nmap <F6> :NERDTreeToggle<CR>
+
+map <C-j> ciw<C-r>0<ESC>
+:command W w
+autocmd BufWritePre * :%s/\s\+$//e
+:highlight ExtraWhitespace ctermbg=darkred
+:match ExtraWhitespace /\s\+$/
 
